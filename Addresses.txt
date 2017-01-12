@@ -1,12 +1,21 @@
+﻿1
+Aga
+R
+342
+fsd
+srw35
+
+2
 Jan
 Kowalski
-353434343
-jankowalski@gmail.com
-Polna 23
+32423
+sdflkjsd
+sdfkj234
 
+3
 Adam
-Nowak
-435345345345
-anowak@onet.eu
-Leśna 231
+Małysz
+234234
+erwerew
+2423fsf
 

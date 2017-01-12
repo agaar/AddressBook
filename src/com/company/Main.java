@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import static com.company.Person.id;
 
 
 public class Main {
@@ -87,7 +86,7 @@ public class Main {
         Person person = new Person(firstName, secondName, phoneNumber, email, address);
         addToFile(person, file);
         people.add(person);
-        System.out.println("Dodano osobę nr: " + id + person);
+        System.out.println("Dodano osobę nr: " + person.getId() + person);
         System.out.println();
         showMainMenu();
         askForInput(file);
@@ -95,7 +94,7 @@ public class Main {
 
     private static void addToFile(Person person, File file) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file, true))) {
-            writer.write(person.getFirstName() + "\r\n" + person.getSecondName() + "\r\n" + person.getPhoneNumber() + "\r\n" + person.getEmail() +
+            writer.write(person.getId() + "\r\n" +person.getFirstName() + "\r\n" + person.getSecondName() + "\r\n" + person.getPhoneNumber() + "\r\n" + person.getEmail() +
                     "\r\n" + person.getAddress() + "\r\n\r\n");
         } catch (IOException e) {
             System.out.println(e);
@@ -104,9 +103,9 @@ public class Main {
 
     private static List<Person> readPeopleListFromFile(File file) throws IOException {
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-            String name = null;
-            while ((name = reader.readLine()) != null) {
-                Person person = new Person(name, reader.readLine(), reader.readLine(), reader.readLine(), reader.readLine());
+            //String name = null;
+            while ((reader.readLine()) != null) {
+                Person person = new Person(reader.readLine(), reader.readLine(), reader.readLine(), reader.readLine(), reader.readLine());
                 people.add(person);                                 //dodaje osoobę do listy
                 reader.readLine();                                  //wczytuje pustą linię
             }
